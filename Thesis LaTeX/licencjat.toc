@@ -1,0 +1,54 @@
+\contentsline {chapter}{Wst\IeC {\k e}p}{4}{chapter*.1}
+\contentsline {section}{\numberline {0.1}Za\IeC {\l }\IeC {\k a}cznik}{5}{section.0.1}
+\contentsline {chapter}{\numberline {1}Dystrybucje Linuxa na system Android}{6}{chapter.1}
+\contentsline {section}{\numberline {1.1}Procesory - Architektura ARM}{6}{section.1.1}
+\contentsline {section}{\numberline {1.2}Emulacja}{7}{section.1.2}
+\contentsline {section}{\numberline {1.3}Emulacja Debiana przeznaczonego na architektur\IeC {\k e} ARM}{10}{section.1.3}
+\contentsline {section}{\numberline {1.4}Narz\IeC {\k e}dzia linuksowe do tworzenia odseparowanego systemu plik\IeC {\'o}w}{12}{section.1.4}
+\contentsline {section}{\numberline {1.5}Uruchomienie dystrybucji Linuxa na telefonie z systemem Android}{13}{section.1.5}
+\contentsline {section}{\numberline {1.6}Komunikacja z wykorzystaniem protoko\IeC {\l }u VNC}{14}{section.1.6}
+\contentsline {section}{\numberline {1.7}Debian - historia}{15}{section.1.7}
+\contentsline {subsection}{\numberline {1.7.1}Pakiety}{16}{subsection.1.7.1}
+\contentsline {subsection}{\numberline {1.7.2}Instalacja pakiet\IeC {\'o}w}{17}{subsection.1.7.2}
+\contentsline {subsection}{\numberline {1.7.3}APT jako narz\IeC {\k e}dzie do pobierania i instalacji pakiet\IeC {\'o}w}{19}{subsection.1.7.3}
+\contentsline {subsection}{\numberline {1.7.4}Debootstrap}{20}{subsection.1.7.4}
+\contentsline {subsection}{\numberline {1.7.5}Deboostrap - instalacja dystrybucji}{21}{subsection.1.7.5}
+\contentsline {chapter}{\numberline {2}Protok\IeC {\'o}\IeC {\l } SIP}{26}{chapter.2}
+\contentsline {section}{\numberline {2.1}Elementy sieci SIP}{27}{section.2.1}
+\contentsline {section}{\numberline {2.2}Dzia\IeC {\l }anie protoko\IeC {\l }u SIP}{28}{section.2.2}
+\contentsline {section}{\numberline {2.3}Implementacje protoko\IeC {\l }u SIP w systemie Linux - serwery}{31}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}miniSipServer}{31}{subsection.2.3.1}
+\contentsline {subsubsection}{Instalacja}{31}{section*.2}
+\contentsline {subsubsection}{Uruchomienie}{32}{section*.3}
+\contentsline {subsection}{\numberline {2.3.2}Asterisk}{32}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Cipango}{33}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Elastix}{33}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}FreeSWITCH}{33}{subsection.2.3.5}
+\contentsline {subsection}{\numberline {2.3.6}Kamailio}{33}{subsection.2.3.6}
+\contentsline {subsection}{\numberline {2.3.7}Inne serwery SIP}{33}{subsection.2.3.7}
+\contentsline {section}{\numberline {2.4}Implementacje protoko\IeC {\l }u SIP w systemie Android - serwery}{34}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}uSipServer}{34}{subsection.2.4.1}
+\contentsline {section}{\numberline {2.5}Implementacje protoko\IeC {\l }u SIP w systemie Linux - klienty}{34}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Blink}{34}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}KPhone}{34}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Linphone}{34}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.4}Zoiper}{35}{subsection.2.5.4}
+\contentsline {subsection}{\numberline {2.5.5}Inne klienty SIP}{35}{subsection.2.5.5}
+\contentsline {section}{\numberline {2.6}Implementacje protoko\IeC {\l }u SIP w systemie Android - klienty}{35}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Konfiguracja natywnego klienta SIP}{35}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Sipdroid}{36}{subsection.2.6.2}
+\contentsline {subsection}{\numberline {2.6.3}CSipSimple}{36}{subsection.2.6.3}
+\contentsline {subsection}{\numberline {2.6.4}Bria VoIP Softphone}{37}{subsection.2.6.4}
+\contentsline {section}{\numberline {2.7}Rynek telefonii SIP}{38}{section.2.7}
+\contentsline {chapter}{\numberline {3}Projekt informatyczny AndroidLinuxSIPService}{40}{chapter.3}
+\contentsline {section}{\numberline {3.1}Narz\IeC {\k e}dzia programistyczne u\IeC {\.z}yte do realizacji}{41}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Przygotowanie dystrybucji}{41}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Przygotowanie skryptu}{41}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Wyb\IeC {\'o}r serwera SIP}{42}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Przygotowanie aplikacji na system Android}{42}{subsection.3.1.4}
+\contentsline {section}{\numberline {3.2}Kod \IeC {\'z}r\IeC {\'o}d\IeC {\l }owy aplikacji i jej dzia\IeC {\l }anie}{44}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Struktura klas aplikacji}{44}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Interfejs aplikacji}{48}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Interfejs webowy serwera miniSipSerwer}{53}{subsection.3.2.3}
+\contentsline {chapter}{Zako\IeC {\'n}czenie}{56}{chapter*.4}
+\contentsline {section}{Spis rysunk\IeC {\'o}w}{58}{section*.5}

@@ -1,0 +1,141 @@
+\ProvidesPackage{licencjat}
+\RequirePackage{graphicx}
+
+\newenvironment{result}%
+{\par\vskip\baselineskip\noindent\ignorespaces}%
+{\par\vskip\baselineskip\noindent\ignorespacesafterend}
+
+\newcommand\ps@online{
+\renewcommand{\@oddhead}{}
+\renewcommand{\@evenhead}{}
+\renewcommand{\@oddfoot}{\hfill
+   \Acrobatmenu{PrevPage}{Previous}
+   \Acrobatmenu{NextPage}{Next}
+   \Acrobatmenu{FirstPage}{First}
+   \Acrobatmenu{LastPage}{Last}
+   \Acrobatmenu{GoBack}{Back}
+   \Acrobatmenu{GoForward}{Forward}\hfill\thepage}
+\renewcommand{\@evenfoot}{\@oddfoot}}
+
+\newcommand{\setonlineps}{%
+  \pagestyle{online}%
+  \let\ps@plain\ps@online
+  \let\ps@mpety\ps@online
+}
+
+\newif\ifonline
+
+% \casemedia{a4}{online}{html}
+\newcommand*{\casemedia}[3]{%
+  \ifonline
+    #2%
+  \else
+    #1%
+  \fi
+}
+
+\providecommand{\latexhtml}[2]{#1}
+
+\providecommand{\latex}[1]{#1}
+\providecommand{\html}[1]{}
+
+\newlength\imgHeight
+\newlength\maxImageHeight
+
+\setlength{\maxImageHeight}{0.8\textheight}
+
+\newlength\imgWidth
+\newlength\maxImageWidth
+\setlength{\maxImageWidth}{\textwidth}
+
+\define@key{Gin}{alt}{}
+
+\newcommand{\incGraphics}[2][]{%
+  \setlength{\maxImageWidth}{\linewidth}%
+  \settoheight{\imgHeight}{\includegraphics[#1]{#2}}%
+  \ifdim\imgHeight>\maxImageHeight
+    \settowidth{\imgWidth}{\includegraphics[#1,height=\maxImageHeight]{#2}}%
+    \ifdim\imgWidth>\maxImageWidth
+      \includegraphics[#1,width=\maxImageWidth]{#2}%
+    \else
+      \includegraphics[#1,height=\maxImageHeight]{#2}%
+    \fi
+  \else
+    \settowidth{\imgWidth}{\includegraphics[#1]{#2}}%
+    \ifdim\imgWidth>\maxImageWidth
+      \includegraphics[#1,width=\maxImageWidth]{#2}%
+    \else
+     \includegraphics[#1]{#2}%
+    \fi
+  \fi
+}
+
+\newsavebox{\boxcontents}
+
+\newcommand*{\includeteximage}[2][]{%
+  \setlength{\maxImageWidth}{\linewidth}%
+  \def\Gin@req@sizes{%
+    \Gin@req@height\Gin@nat@height
+    \Gin@req@width\Gin@nat@width}%
+  \begingroup
+    \@tempswafalse
+    \let\input@path\Ginput@path
+    \toks@{\InputIfFileExists{#2}{}{\@warning{File `#1' not found}}}%
+    \setkeys{Gin}{#1}%
+    \Gin@esetsize
+    \sbox\boxcontents{\the\toks@}%
+    \settoheight{\imgHeight}{\usebox\boxcontents}%
+    \settodepth{\@ff@tmp@y}{\usebox\boxcontents}%
+    \addtolength{\imgHeight}{\@ff@tmp@y}%
+    \ifdim\imgHeight>\maxImageHeight
+      \ifdim\maxImageHeight<\maxImageWidth\relax
+        \resizebox{!}{\maxImageHeight}{\usebox\boxcontents}%
+      \else
+        \settowidth{\imgWidth}{\usebox\boxcontents}%
+        \ifdim\imgWidth>\maxImageWidth
+          \resizebox{\maxImageWidth}{!}{\usebox\boxcontents}%
+        \else
+          \resizebox{!}{\maxImageHeight}{\usebox\boxcontents}%
+        \fi
+      \fi
+    \else
+      \settowidth{\imgWidth}{\usebox\boxcontents}%
+      \ifdim\imgWidth>\maxImageWidth
+       \resizebox{\maxImageWidth}{!}{\usebox\boxcontents}%
+      \else
+        \usebox\boxcontents
+      \fi
+    \fi
+  \endgroup
+}
+
+\newcommand*{\incPgfOrGraphics}[2][]{%
+  \IfFileExists{#2}{\includeteximage[#1]{#2}}{\incGraphics[#1]{#2}}%
+}
+
+\newcommand*{\@html@nodename}{\jobname}
+\newcommand*{\setnode}[1]{\renewcommand*{\@html@nodename}{#1}}
+
+\protected@write\@auxout{}{%
+\string\html{\string\gdef\string\newlabelxx
+\string#1\string#2\string#3\string#4\string#5\string#6{%
+\string\oldnewlabel{\string#1}{{\string#2}{\string#3}}%
+\string\sectionlabel{\string#1}{\string#4}}}}
+
+\DeclareRobustCommand*{\sectionref}[2][]{\htmlref{Section~\ref*{#2}}{#2}}
+
+\newcommand*{\qt}[1]{``#1''}
+
+\DeclareRobustCommand{\meta}[1]{\textnormal{\ensuremath{\langle}\emph{#1}\ensuremath{\rangle}}}
+
+\DeclareRobustCommand{\cs}[1]{\texttt{\char`\\#1}}
+\DeclareRobustCommand{\cls}[1]{\textsf{#1}}
+\DeclareRobustCommand{\sty}[1]{\textsf{#1}}
+\DeclareRobustCommand{\env}[1]{\textsf{#1}}
+
+\newcommand*{\htmladdnormallink}[2]{\href{#2}{#1}}
+
+\newcommand*{\baseurl}{}
+\newcommand*{\setbaseurl}[1]{\renewcommand*{\baseurl}{#1}}
+
+\endinput
