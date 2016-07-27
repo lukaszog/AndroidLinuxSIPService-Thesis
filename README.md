@@ -1,4 +1,4 @@
-Thesis 
+Thesis - Android Linux SIP Service
 ==========
 Thesis discusses issues related to the Linux distributions that can be run on mobile devices based on the ARM architecture. The practical part of the work focuses on the use of Linux distributions running on Android, which is used as a telephony server SIP.
 
